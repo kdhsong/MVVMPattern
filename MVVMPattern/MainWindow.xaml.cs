@@ -21,7 +21,7 @@ namespace MVVMPattern
     /// </summary>
     public partial class MainWindow : Window
     {
-        PersonasViewModel viewContext = new PersonasViewModel();
+        FotaViewModel viewContext = new FotaViewModel();
         public MainWindow()
         {
             this.DataContext = viewContext;

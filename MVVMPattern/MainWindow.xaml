@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMPattern"
         mc:Ignorable="d"
-        Title="Patrón MVVM - WPF" Height="325.945" Width="775.172" FontSize="16">
+        Title="Pattern MVVM - WPF" Height="325.945" Width="775.172" FontSize="16">
     <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
@@ -16,28 +16,32 @@
             <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Label Content="Name: " />
-                    <TextBox Width="150" Text="{Binding PersonaActual.Name, Mode=TwoWay, UpdateSourceTrigger=Default}" x:Name="nameTxt"/>
+                    <TextBox Width="150" Text="{Binding FotaInformationActual.Name, Mode=TwoWay, UpdateSourceTrigger=Default}" x:Name="nameTxt"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
                     <Label Content="FirstName" />
-                    <TextBox Width="150" Text="{Binding PersonaActual.FirstName, Mode=TwoWay, UpdateSourceTrigger=Default}" />
+                    <TextBox Width="150" Text="{Binding FotaInformationActual.FirstName, Mode=TwoWay, UpdateSourceTrigger=Default}" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
-                    <Label Content="Age (años): " />
-                    <TextBox Width="80" Text="{Binding PersonaActual.Age, Mode=TwoWay, UpdateSourceTrigger=Default, StringFormat=\{0:0\}}" Margin="0,0,70,0"/>
+                    <Label Content="Age: " />
+                    <TextBox Width="80" Text="{Binding FotaInformationActual.Age, Mode=TwoWay, UpdateSourceTrigger=Default, StringFormat=\{0:0\}}" Margin="0,0,70,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,20" HorizontalAlignment="Center">
-                    <Button Height="32" Width="80" Margin="8,0" Content="AddPerson" Command="{Binding AddPersonCommand}" x:Name="addPersonBtn" Click="addPersonBtn_Click"/>
-                    <Button Height="32" Width="80" Margin="8,0" Content="Save" Command="{Binding SaveCommand}"/>
+                    <Button Height="32" Width="86" Margin="8,0" Content="AddPerson" Command="{Binding AddFotaCommand}" x:Name="addPersonBtn" Click="addPersonBtn_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                    <Label Content="Input:" />
+                    <TextBox Width="150" Text="{Binding FotaInformationActual.Input, Mode=TwoWay, UpdateSourceTrigger=Default, StringFormat=\{0:0\}}" Margin="0,0,70,0"/>
                 </StackPanel>
             </StackPanel>
         </GroupBox>
         
-        <DataGrid Grid.Column="1" HorizontalAlignment="Stretch" 
+        <ListView Grid.Column="1" HorizontalAlignment="Stretch" 
                   VerticalAlignment="Top" MaxHeight="300" Height="250"
-                  ItemsSource="{Binding Personas}"
-                  SelectedItem="{Binding PersonaActual}"
-			      SelectionMode="Single" CanUserAddRows="False" IsReadOnly="True" CanUserDeleteRows="False"/>
+                  ItemsSource="{Binding FotaList}"
+                  SelectedItem="{Binding String}"
+			      SelectionMode="Single"/>
     </Grid>
 </Window>

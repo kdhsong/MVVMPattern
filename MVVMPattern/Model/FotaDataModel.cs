@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace MVVMPattern.Model
 {
-    public class Persona
+    public class FotaDataModel
     {
         public string Name { get; set; }
         public string FirstName { get; set; }
+        public string Sex { get; set; }
         public int Age { get; set; }
+        public string Input { get; set; }
     }
 }

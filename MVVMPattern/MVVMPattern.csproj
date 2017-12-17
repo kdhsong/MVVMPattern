@@ -55,8 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\Persona.cs" />
-    <Compile Include="ViewModel\PersonasViewModel.cs" />
+    <Compile Include="Model\FotaDataModel.cs" />
+    <Compile Include="Model\FotaProcessModel.cs" />
+    <Compile Include="ViewModel\FotaViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
